@@ -1,0 +1,13 @@
+@import "../../../variables";
+
+:global {
+  .fa-refresh {
+    float: right;
+    color: $color-title;
+    cursor: pointer;
+
+    &.refreshing {
+      animation: fa-spin .5s;
+    }
+  }
+}

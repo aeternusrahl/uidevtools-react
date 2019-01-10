@@ -1,0 +1,14 @@
+@import "../../../variables";
+
+.inputRow {
+  .label {
+    @include subtitle;
+    margin-top: $padding-default;
+    padding-left: $padding-default;
+    font-size: 0.8rem;
+  }
+}
+
+.conversionResults {
+  margin-top: 1rem;
+}

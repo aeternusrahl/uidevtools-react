@@ -1,0 +1,32 @@
+@import "../variables";
+
+
+.panel {
+  background-color: $bgcolor-panel;
+  border: 2px solid $border-color-panel;
+  @include standard-padding(1, margin);
+}
+
+.header {
+  background-color: $border-color-panel;
+  @include standard-padding();
+
+  >.title {
+    @include title(1.1rem);
+  }
+
+}
+
+.row {
+  &:not(:last-child) {
+    margin-bottom: $padding-default * 2;
+  }
+}
+
+.body {
+  @include standard-padding;
+
+  >div {
+    @extend .row;
+  }
+}

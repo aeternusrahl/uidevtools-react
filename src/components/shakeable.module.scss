@@ -1,0 +1,26 @@
+
+@keyframes shakeElementAnim {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0.5rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shakeElement {
+  -webkit-animation: shakeElementAnim .15s;
+  -o-animation: shakeElementAnim .15s;
+  animation: shakeElementAnim .15s;
+}
+
+

@@ -1,0 +1,55 @@
+@import "../../variables";
+
+.dashboard {
+
+  display: block;
+  width: 100%;
+  @include standard-padding;
+
+  @include medium-up {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+.dashboard .dashLink {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include standard-padding;
+  @include transition(background-color 200ms ease-out, border-color 200ms ease-out);
+
+  background-color: $bgcolor-panel;
+  border: 2px solid $border-color-panel;
+  &:hover {
+    background-color: lighten($bgcolor-panel, 5%);
+    border-color: lighten($border-color-panel, 5%);
+  }
+
+  @include small-only {
+    margin: #{$padding-default * 2} #{$padding-default} #{$padding-default * 2} #{$padding-default};
+  }
+
+  @include medium-up {
+    width: 20rem;
+    height: 10rem;
+    margin: $padding-default * 2;
+  }
+
+
+  >.title {
+    @include title;
+  }
+
+  >.subtitle {
+    @include subtitle;
+  }
+
+}

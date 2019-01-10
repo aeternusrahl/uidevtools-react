@@ -1,0 +1,38 @@
+@import '../../../variables';
+
+
+.epochValue {
+  cursor: pointer;
+
+  @include medium-up {
+    width: 15rem !important;
+    text-align: right;
+  }
+
+  @keyframes FlashBackgroundAnim {
+    from {
+      background-color: lighten($bgcolor-default, 40%);
+    }
+    to {
+      background-color: lighten($bgcolor-default, 5%);
+    }
+  }
+
+  &.clipboardCopied {
+    -webkit-animation: FlashBackgroundAnim .6s;
+    -o-animation: FlashBackgroundAnim .6s;
+    animation: FlashBackgroundAnim .6s;
+  }
+
+  &:not(.clipboardCopied) { // dont transition when we are animating also
+    @include transition(background-color 200ms ease-out);
+  }
+  &:hover {
+    background-color: lighten($bgcolor-default, 5%);
+  }
+}
+
+.epochLabel {
+  font-size: 1rem;
+  @include subtitle;
+}

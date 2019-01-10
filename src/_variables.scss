@@ -1,0 +1,106 @@
+//
+// SCSS Partials file declaring variables and mixins.
+//
+
+
+//
+// COLORS
+//
+
+$bgcolor-default: #514a80 !default;
+$color-default: #c2bdf2 !default;
+
+$color-title: lighten($color-default, 15%) !default;
+$color-subtitle: mix($color-default, $bgcolor-default, 70%) !default;
+
+$bgcolor-panel: lighten($bgcolor-default, 10%)  !default;
+$border-color-panel: lighten($bgcolor-panel, 5%)  !default;
+
+$color-placeholder: lighten($bgcolor-default, 25%) !default;
+
+$color-focus: #a6aa6c !default;
+
+//
+// Media Queries
+//
+$small-breakpoint: 320px !default;
+$medium-breakpoint: 768px !default;
+$large-breakpoint: 1024px !default;
+
+@mixin small-only {
+  @media (max-width: #{$medium-breakpoint - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+
+//
+// Helpers
+//
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+//
+// General Spacing
+//
+$padding-default: 0.25rem !default;
+
+@mixin standard-padding($factor: 1, $property: padding) {
+  #{$property}: $padding-default * $factor;
+  @include medium-up {
+    #{$property}: $padding-default * 2 * $factor;
+  }
+}
+
+
+//
+// Typeography
+//
+
+@mixin title($font-size: 1.75rem) {
+  color: $color-title;
+  font-size: $font-size;
+  letter-spacing: 1px;
+}
+
+@mixin subtitle() {
+  color: $color-subtitle;
+}
+
+
+
+//
+// Misc Widgets
+// (These should really be styles instead of mixins
+// but angular+encapsulation just doesn't play well
+// with sass)
+//
+//@mixin panel($brightness-factor: 0) {
+//  background-color: lighten($bgcolor-panel, $brightness-factor);
+//  border: 2px solid lighten($border-color-panel, $brightness-factor);
+//}
+

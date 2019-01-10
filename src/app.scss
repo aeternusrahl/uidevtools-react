@@ -1,0 +1,12 @@
+@import "variables";
+
+.site-header {
+  text-transform: capitalize;
+  text-align: center;
+  background-color: darken($bgcolor-default, 20%);
+  text-shadow: 0 0 1rem darken($bgcolor-default, 40%);
+
+  border-bottom: 2px solid darken($bgcolor-default, 25%);
+
+  @include standard-padding;
+}
